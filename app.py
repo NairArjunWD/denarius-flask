@@ -23,4 +23,5 @@ def after_request(response):
 
 # Run the app when the program starts!
 if __name__ == '__main__':
+    models.initialize()
     app.run(debug=DEBUG, port=PORT)
