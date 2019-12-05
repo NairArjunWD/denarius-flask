@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, g 
+import models
 
 DEBUG = True
 PORT = 8000
