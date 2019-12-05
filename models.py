@@ -4,6 +4,7 @@ DATABASE = SqliteDatabase('investments.sqlite')
 
 
 class Stock(Model):
+    id = PrimaryKeyField(null=False)
     name = CharField()
     company = CharField()
     amount = FloatField()
@@ -13,6 +14,7 @@ class Stock(Model):
         database = DATABASE
 
 class ETF(Model):
+    id = PrimaryKeyField(null=False)
     name = CharField()
     company = CharField()
     country = CharField()
@@ -23,6 +25,7 @@ class ETF(Model):
         database = DATABASE
 
 class Bond(Model): 
+    id = PrimaryKeyField(null=False)
     name = CharField()
     company = CharField()
     amount = FloatField()
