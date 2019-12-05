@@ -1,3 +1,4 @@
+import datetime
 from peewee import *
 
 DATABASE = SqliteDatabase('investments.sqlite')
