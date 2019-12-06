@@ -26,7 +26,10 @@ def after_request(response):
     g.db.close()
     return response
 
-# Run the app when the program starts!
+CORS(stock, origins=['http://localhost:3000'],supports_credentials=True)
+
+app.register_blueprint(stock, url_prefix='/api/v1/stocks')
+
 if __name__ == '__main__':
     models.initialize()
     app.run(debug=DEBUG, port=PORT)
