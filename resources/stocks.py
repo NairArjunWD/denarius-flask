@@ -14,6 +14,6 @@ def get_all_stocks():
         stocks = [model_to_dict(stock)
             for stock in models.Stock.select()]
         print(stocks)
-        return jsonify(data=stocks, status={"code": 200, "message": "Success"})
+        return jsonify(data=stocks, status={"code": 200, "message": "Stocks is connected"})
     except models.DoesNotExist:
         return jsonify(data={}, status={"code": 401, "message": "error getting the resources"})
