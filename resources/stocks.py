@@ -50,3 +50,10 @@ def update_stock(id):
     stock_dict = model_to_dict(stock)
     return jsonify(data=stock_dict, status={"code": 200, "message": "stock is updated!"})
 
+# Delete Route
+@stock.route('/<id>', methods=["DELETE"])
+def delete_stock(id):
+    query = models.Stock.delete().where(models.Stock.id == id)
+    query.execute()
+    return jsonify(data='resource successfully deleted', status={"code": 200, "message": "stock has been successfully deleted"})
+
