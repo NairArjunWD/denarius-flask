@@ -12,6 +12,7 @@ PORT = 8000
 # Initialize an instance of the Flask class.
 # This starts the website!
 app = Flask(__name__)
+CORS(app)
 
 @app.before_request
 def before_request():

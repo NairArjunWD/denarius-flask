@@ -36,7 +36,7 @@ def create_stocks():
 def get_one_stock(id):
     print(id)
 
-    # stock = models.Stock.get_by_id(id)
+    stock = models.Stock.get_by_id(id)
 
-    return jsonify(data={"stock": 200, "message": "Stock Show is showing"})
+    return jsonify(data={"stock": model_to_dict(stock)}, status={"code": 200, "message": "Stock Show is showing"})
 
