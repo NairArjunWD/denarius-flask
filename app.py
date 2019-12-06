@@ -1,4 +1,9 @@
 from flask import Flask, g 
+
+from flask_cors import CORS
+
+from resources.stocks import stock
+
 import models
 
 DEBUG = True
