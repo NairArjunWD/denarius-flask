@@ -17,3 +17,13 @@ def get_all_stocks():
         return jsonify(data=stocks, status={"code": 200, "message": "Stocks is connected"})
     except models.DoesNotExist:
         return jsonify(data={}, status={"code": 401, "message": "error getting the resources"})
+
+# Show Route
+@stock.route('/<id>', methods=["GET"])
+def get_one_stock(id):
+    print(id)
+
+    # stock = models.Stock.get_by_id(id)
+
+    return jsonify(data={"stock": 200, "message": "Stock Show is showing"})
+
