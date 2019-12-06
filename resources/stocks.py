@@ -40,3 +40,13 @@ def get_one_stock(id):
 
     return jsonify(data={"stock": model_to_dict(stock)}, status={"code": 200, "message": "Stock Show is showing"})
 
+# Update Route
+@stock.route('/<id>', methods=['PUT'])
+def update_stock(id):
+    payload = request.get_json()
+    query = models.Stock.update(**payload).where(models.Stock.id == id)
+    query.execute()
+    stock = models.Stock.get_by_id(id)
+    stock_dict = model_to_dict(stock)
+    return jsonify(data=stock_dict, status={"code": 200, "message": "stock is updated!"})
+
