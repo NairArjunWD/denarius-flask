@@ -29,7 +29,7 @@ def create_stocks():
     print(dir(stock))
 
     stock_dict = model_to_dict(stock)
-    return jsonify(data=timeline_dict, status={"code": 201, "message": "New stock card is added to the indexs"})
+    return jsonify(data=stock_dict, status={"code": 201, "message": "New stock card is added to the indexs"})
 
 # Show Route
 @stock.route('/<id>', methods=["GET"])
