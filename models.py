@@ -14,7 +14,7 @@ class Stock(Model):
     class Meta:
         database = DATABASE
 
-class ETF(Model):
+class Etf(Model):
     id = PrimaryKeyField(null=False)
     name = CharField()
     company = CharField()
@@ -39,6 +39,6 @@ class Bond(Model):
 
 def initialize():
     DATABASE.connect()
-    DATABASE.create_tables([Stock, ETF, Bond], safe=True)
+    DATABASE.create_tables([Stock, Etf, Bond], safe=True)
     print("TABLES Created")
     DATABASE.close()
