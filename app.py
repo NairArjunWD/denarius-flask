@@ -1,18 +1,31 @@
-from flask import Flask, g 
+from flask import Flask, jsonify, g 
 
 from flask_cors import CORS
 
+from flask_login import LoginManager
+
 from resources.stocks import stock
+from resources.users import user
 
 import models
 
 DEBUG = True
 PORT = 8000
 
+login_manager = LoginManager()
+
 # Initialize an instance of the Flask class.
 # This starts the website!
 app = Flask(__name__)
 CORS(app)
+
+app.secret_key = "s234aIoda2IJN"
+login_manager.init_app(app)
+
+# @login_manager.user_loader
+# def load_user(userid):
+#     try: 
+
 
 @app.before_request
 def before_request():

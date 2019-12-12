@@ -1,8 +1,18 @@
 import datetime
 from peewee import *
+from playhouse.db_url import connect
+from flask_login import UserMixin
+
 
 DATABASE = SqliteDatabase('investments.sqlite')
 
+class User(UserMixin, Model):
+    username = CharField(unique=True)
+    password = CharField()
+    email = CharField(unique=True)
+
+    class Meta:
+        database = DATABASE
 
 class Stock(Model):
     id = PrimaryKeyField(null=False)
