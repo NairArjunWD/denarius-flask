@@ -43,6 +43,7 @@ def get_one_stock(id):
 # Update Route
 @stock.route('/<id>', methods=['PUT'])
 def update_stock(id):
+    print('we are hitting here')
     payload = request.get_json()
     query = models.Stock.update(**payload).where(models.Stock.id == id)
     query.execute()
